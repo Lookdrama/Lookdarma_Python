@@ -1,0 +1,45 @@
+'''
+#对象为false
+print(bool(0))
+print(bool(None))
+print(bool(''))     #''无元素
+print(bool(""))     #“”无元素
+print(bool([]))     #空列表
+print(bool(list()))     #空列表
+print(bool(()))     #空元组
+print(bool(tuple()))    #空元组
+print(bool({}))     #空字典
+print(bool(dict()))     #空字典
+print(bool(set()))  #空集合
+'''
+
+'''
+#if语句
+money=1000 #余额
+s=int(input("请输入取款金额"))
+if money > s:
+    money-=s
+    print("取款成功"+"剩余余额为："+str(money))
+else:
+    print("取款失败")
+
+#条件表达式进行比较(if前面为真，else后面为假)
+print('取款成功' if money>s else '取款失败')
+'''
+
+#pass语句:语句什么都不做，只是一个占位符，用在语法上需要语句的地方，类似与(;)
+
+#内置函数range()函数的使用
+#作用：用于生成一个整数序列
+'''第一种创建方式，只有一个参数 range(stop),步长为1'''
+r=range(10)     #[0,1,2,3,4,5,6,7,8,9],默认从0开始，默认相差1的步长
+print(list(r))  #list()用于查看range对象中的整数序列
+
+'''第二种创建方式，有两个参数 range(start,stop),步长为1'''
+r=range(1,10)       #[1,2,3,4,5,6,7,8,9]
+print(list(r))
+
+'''第三种创建方式，有三个参数 range(start,stop,step)'''
+r=range(0,10,2)     #[0, 2, 4, 6, 8]
+print(list(r))
+'''所以可以用in或者in not来判断整数是否在整数序列中'''

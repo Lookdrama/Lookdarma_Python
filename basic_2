@@ -1,0 +1,29 @@
+# name为变量名
+#使用三引号可以实现多行写
+name2='''look
+drama'''
+print(name2)
+
+name = '梁建鑫'
+age=19
+#print('地址', id(name))
+#print('类型', type(name))
+#print('值', name)
+
+#bool类型
+#f1=True;
+#print(f1,type(f1));
+
+#类型转换
+#print('我叫'+name+"今年"+age+'岁') can only concatenate str (not "int") to str
+print('我叫'+name+"今年"+str(age)+'岁')      #类型转换
+print(type(age))
+age="10"
+print(type(int(age)))       #str->int只能“ ”中为整数
+print(float(age))           #str->float只能“ ”中为整数,int->float会加.0
+
+#单行注释:#
+'''
+    多行注释:三引号之间
+'''
+

@@ -1,0 +1,62 @@
+'''
+'while循环'
+i=0;
+count=0
+while i<100:
+    if i%2==0:
+        count+=i
+    i+=1;
+print(count)
+'''
+
+'''
+for in循环:
+    for 自定义变量 in 可迭代对象(字符串、队列):
+        循环体
+'''
+
+'''
+#字符串
+for item in "Hello World":
+    print(item)
+
+#range()队列作为迭代对象
+for item in range(10):
+    print(item)
+
+#若不需要自定义对象，可用"_"来代替
+for _ in range(5):
+    print("Hello World")    #输出五次
+
+#三位水仙花数
+for i in range(100,1000):
+    n1=i//100 #百位
+    n2=i//10%10  #十位
+    n3=i%10     #个位
+
+    if i == n1**3+n2**3+n3**3:
+        print(i)
+'''
+
+'''
+#break和continue
+i=0
+while i<100:
+    if i==5:
+        print(i)
+        break   #continue
+    else :
+        print(i)
+    i+=1
+'''
+
+#for-else 和 while-else
+for item in range(3):
+    pwd=int(input("请输入密码:>"))
+    if pwd==8888:
+        print("密码正确")
+        break
+    else :
+        print("密码不正确")
+else :
+    print("三次密码均输入错误")

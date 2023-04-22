@@ -1,0 +1,88 @@
+#[]定义列表
+list1=["hello","world","2023"]
+print(list1)
+
+#创建列表第二种方式，使用内置函数list()
+'''
+    正向索引：从0到N-1
+    逆向索引：从-N到-1
+    指定索引不存在，抛出IndexError
+'''
+list2=list(["hello","world",2023])    #创建一个引用
+print(type(list2[2]))
+
+#通过index来获取元素索引(若有相同元素，返回第一个出现的索引)
+print(list2.index("hello"))
+
+'''
+获取列表当中的多个元素
+    语法格式：
+    列表名[start:stop:step]
+'''
+list3=[1,2,3,4,5,6,7,8,9,0]
+#start=1,stop=6,step=1
+print(list3[1:6:1])     #默认，start=0,stop=N-1,step=11
+#若step为负数，则切片的第一个元素默认是列表的最后一个元素
+
+#判断元素是否存在列表中:in not in
+list4=[1,2,3]
+print(1 in list4)
+print(0 not in list4)
+
+#遍历列表
+for i in list4:
+    print(i)    #打印迭代变量
+
+#列表元素的增加
+'''
+    append():在列表的末尾添加一个元素
+    extend():在列表的末尾添加至少一个元素
+    insert():在列表任意位置添加一个元素
+    切片:在列表的任意位置添加至少一个元素
+'''
+list5=[1,2,3,4,5]
+print("before:",list5)
+list5.append(6)
+print("after::",list5)
+list5.append("hello world")
+print("after::",list5)
+list5.extend("hello world")
+print("after::",list5)
+list5.insert(0,0)
+print("after::",list5)
+tlist=[1,1]
+list5[1:]=tlist     #将后面直接替代掉
+print("after::",list5)
+
+#列表元素的删除操作;clear()列表所有元素  del()清除列表对象
+list6=[1,2,3,4,2,5]
+list6.remove(2)     #从列表中移除一个元素，若有相同的，则移除第一个元素；不存在，则抛出ValueError
+print(list6)
+
+list6.pop(1)    #移除索引位置的元素，若没有指定索引，则移除最后一个元素
+print(list6)
+
+#列表元素的修改:可以指定索引位置进行修改
+list7=[1,1,1,1,0]
+list7[4]=1;
+print(list7)
+#使用切片
+list7[1:2]=[0,0,0]
+print(list7)
+
+#列表的排序:sort()升序
+list8=[12,31,2312,3]
+print(list8)
+list8.sort(reverse=False)      #升序
+print(list8)
+list8.sort(reverse=True)       #降序
+print(list8)
+
+#列表生成式
+'''
+    语法格式：
+    [i*i   for                         i        in       range(1,10)]
+表示列表元素的表达式(包含自定义变量)       自定义变量             可迭代对象
+'''
+list9=[i*i for i in range(1,10)]
+print(list9)

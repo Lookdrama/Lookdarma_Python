@@ -1,0 +1,69 @@
+"使用{}创建字典"
+scores={'张三':100,'李四':98,'王五':90}   #冒号前面是key，后面是values
+print(scores)
+print(type(scores))
+
+"使用dict()创建字典"
+student=dict(name="ljx",age=20)
+print(student)
+print(type(student))
+print(student['age'])
+print(student.get('name'))
+
+"获取字典中(第一种方法)的元素:[]或者get()"
+scores={'张三':100,'李四':98,'王五':90}
+print(scores['张三'])
+print(scores.get('张三'))
+
+"字典的常见操作"
+'''key的判断'''
+scores={'张三':100,'李四':98,'王五':90}
+print('张三' in scores)
+
+"删除字典中的元素"
+del scores['张三']
+#scores.clear()
+print(scores)
+scores["ljx"]=100   #增加
+print(scores)
+scores["李四"]=60     #修改
+print(scores)
+
+'''
+字典的视图操作:
+    keys()      获取字典中所有key
+    values()    获取字典中所有value
+    items()     获取字典中所有key，value对
+'''
+#获取字典中所有key
+keys=scores.keys();
+print(keys)
+print(type(keys))
+print(list(keys))   #将keys转换成列表
+
+#获取字典中所有value
+values=scores.values();
+print(values)
+print(type(values))
+print(list(values))   #将values转换成列表
+
+#获取字典中所有key，value对
+items=scores.items();
+print(items)
+print(type(items))
+print(list(items))   #将items转换成元组("()")
+
+"字典的遍历"
+for item in scores:     #item是键值
+    print(item,scores[item],scores.get(item))
+
+
+'''
+字典生成式（已元素少的为基准进行生成）
+语法格式：{item.upper()(表示字典key的表达式): 表示字典value的表达式 for item(自定义表示key的变量),price(自定义表示value的变量) in zip(items,prices)}
+            .upper()可加可不加，加了表示键值变成大写，不加就是items
+'''
+items=['Fruits','Books','Others']
+prices=[96,98,100]
+temp={item:price for item,price in zip(items,prices)}
+print(temp)
